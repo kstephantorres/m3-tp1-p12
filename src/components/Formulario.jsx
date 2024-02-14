@@ -13,15 +13,17 @@ const Formulario = () => {
                             (<div className="d-flex justify-content-center my-5">
                                 <Spinner animation="border" variant="dark" className='my-4'/>
                             </div>) 
-                            : (<ListaNoticias noticias={noticias}></ListaNoticias> )
+                            : (noticias.length === 0 ? 
+                                <h3 className="text-center mb-5">No se encontro noticias</h3> :
+                                <ListaNoticias noticias={noticias}></ListaNoticias> )
     
     const consultarApi = async(tag)=>{
         try {
+            setMostrarSpinner(true)
           const respuesta = tag ? 
             await fetch(`https://newsdata.io/api/1/news?apikey=pub_378948b71cfdc1810b0e7167844b4204fe314&language=es&category=${tag}`)
             :  await fetch(`https://newsdata.io/api/1/news?apikey=pub_378948b71cfdc1810b0e7167844b4204fe314&language=es&category=business`)
           const datos = await respuesta.json()        
-          console.log("🚀 ~ consultarApi ~ datos:", datos)
           setNoticias(datos.results)
           setMostrarSpinner(false)      
         } catch (error) {
@@ -36,9 +38,7 @@ const Formulario = () => {
 
     const handleChange =(e)=>{
         const nuevoTag = e.target.value
-        console.log(e.target.value)
         setTag(nuevoTag)
-        // consultarApi(tag)
     }
    
     console.log(tag)
