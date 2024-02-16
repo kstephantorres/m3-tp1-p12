@@ -125,6 +125,19 @@ const Formulario = () => {
                             <option value="bt">Bhutan</option>
                             <option value="bo">Bolivia</option>
                             <option value="ba">Bosnia And Herzegovina</option>
+                            <option value="br">Brazil</option>
+                            <option value="bn">Brunei</option>
+                            <option value="bg">Bulgaria</option>
+                            <option value="bf">Burkina fasco</option>
+                            <option value="bi">Burundi</option>
+                            <option value="kh">Cambodia</option>
+                            <option value="cm">Cameroon</option>
+                            <option value="ca">Canada</option>
+                            <option value="cv">Cape Verde</option>
+                            <option value="ky">Cayman Islands</option>
+                            <option value="cf">Central African Republic</option>
+                            <option value="td">Chad</option>
+                            <option value="cl">Chile</option>
                         </Form.Select>
                     </Col>
 
